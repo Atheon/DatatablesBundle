@@ -19,8 +19,8 @@ use Symfony\Component\PropertyAccess\PropertyAccessor;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorageInterface;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
-use Symfony\Component\Translation\TranslatorInterface;
-use Twig_Environment;
+use Symfony\Contracts\Translation\TranslatorInterface;
+use Twig\Environment;
 
 abstract class AbstractDatatable implements DatatableInterface
 {
@@ -62,7 +62,7 @@ abstract class AbstractDatatable implements DatatableInterface
     /**
      * The Twig Environment.
      *
-     * @var Twig_Environment
+     * @var Environment
      */
     protected $twig;
 
@@ -154,7 +154,7 @@ abstract class AbstractDatatable implements DatatableInterface
         TranslatorInterface $translator,
         RouterInterface $router,
         EntityManagerInterface $em,
-        Twig_Environment $twig
+        Environment $twig
     ) {
         $this->validateName();
 

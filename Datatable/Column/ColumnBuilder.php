@@ -17,7 +17,7 @@ use Doctrine\ORM\Mapping\MappingException;
 use Exception;
 use Sg\DatatablesBundle\Datatable\Factory;
 use Symfony\Component\Routing\RouterInterface;
-use Twig_Environment;
+use Twig\Environment;
 
 class ColumnBuilder
 {
@@ -31,7 +31,7 @@ class ColumnBuilder
     /**
      * The Twig Environment.
      *
-     * @var Twig_Environment
+     * @var Environment
      */
     private $twig;
 
@@ -88,7 +88,7 @@ class ColumnBuilder
     /**
      * @param string $datatableName
      */
-    public function __construct(ClassMetadata $metadata, Twig_Environment $twig, RouterInterface $router, $datatableName, EntityManagerInterface $em)
+    public function __construct(ClassMetadata $metadata, Environment $twig, RouterInterface $router, $datatableName, EntityManagerInterface $em)
     {
         $this->metadata = $metadata;
         $this->twig = $twig;
